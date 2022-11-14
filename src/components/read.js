@@ -4,7 +4,8 @@ import axios from "axios";
 
 export class Read extends React.Component{
     
-
+    {/*Pulls the information stored in JSON data on the server and posts that to our read component*/}
+    
     componentDidMount() {
         axios.get('http://localhost:4000/api/books')
         .then((response)=>{
