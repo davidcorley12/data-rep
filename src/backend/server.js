@@ -4,6 +4,7 @@ const port = 4000
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+{/*Cross-Origin Resource Sharing allows us to post and get code between the server.js and the app.js*/}
 app.use(cors());
 app.use(function(req, res, next) {
 res.header("Access-Control-Allow-Origin", "*");
@@ -13,17 +14,19 @@ res.header("Access-Control-Allow-Headers",
 next();
 });
 
-// parse application/x-www-form-urlencoded
+{/*parse application/x-www-form-urlencoded*/}
 app.use(bodyParser.urlencoded({ extended: false }))
 
-// parse application/json
+{/*parse application/json*/}
 app.use(bodyParser.json())
 
+{/*Sends information inserted into the form to /api/books, posts to the console that a book has been added.*/}
 app.post('/api/books', (req, res)=>{
     console.log(req.body);
     res.send('Book added');
 })
 
+{/*An array holding information on the books*/}
 app.get('/api/books', (req, res)=>{
 const books = [
 
