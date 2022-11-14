@@ -1,7 +1,10 @@
 import React from "react";
 import axios from 'axios';
+{/*Axios is a Promise-based library, and converts the data that it fetches from the API from JSON format.*/}
 
 export class Create extends React.Component {
+    
+    {/*Takes input on form for book title, cover and author.*/}
 
     constructor(){
         super();
@@ -28,6 +31,7 @@ export class Create extends React.Component {
             author:this.state.author
         }
 
+        {/*Communicates between the server, posts the book information inputed at this address*/}
         axios.post('http://localhost:4000/api/books',book)
         .then()
         .catch();
